@@ -44,4 +44,6 @@ firstName.length > lastName.length ? console.log(`Your first name, ${firstName} 
 
 console.log(c.getFullYear(), "-", c.getMonth(), "-", c.getDate(), c.getHours(), ":", c.getMinutes())
 
+console.log(c.getDate())
+
 

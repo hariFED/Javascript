@@ -28,3 +28,6 @@ function rangeOfNumbers(startNum, endNum) {
     }
 };
 console.log(rangeOfNumbers(6, 5))
+
+
+

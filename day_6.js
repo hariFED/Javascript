@@ -108,7 +108,7 @@ function sixCharactersRandom() {
     for (let i = 1; i <= Math.random() * 100; i++) {
         randomChar.push(charatersRandom.charAt(parseInt(Math.random() * charatersRandom.length)))
     }
-    console.log(randomChar)
+    return randomChar.join("")
 }
 sixCharactersRandom()
 
