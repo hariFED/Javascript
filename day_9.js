@@ -266,3 +266,27 @@ function averageRatings(name) {
 
 }
 averageRatings('mobile phone')
+
+// {
+//     _id: 'hedfcg',
+//     name: 'TV',
+//     description: 'Smart TV:Procaster',
+//     price: 400,
+//     ratings: [{ userId: 'fg12cy', rate: 5 }],
+//     likes: ['fg12cy']
+// }
+// Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+function likeProduct(_id, name) {
+    const product = products.find(product => product.name === name)
+    let indexinLikes = 0;
+    if (product.likes.includes(_id)) {
+        indexinLikes = product.likes.indexOf(_id)
+        product.likes.splice(indexinLikes)
+    }
+    else {
+        product.likes.push(_id)
+    }
+    console.log(products)
+}
+
+likeProduct('gkylti', 'TV')
