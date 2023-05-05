@@ -80,9 +80,220 @@ console.log(countriesPhrase)
 const namesLength = names.some(n => n.length > 7)
 console.log(namesLength)
 // Use every to check if all the countries contain the word land
+const countriesCheck = countries.every(n => n.includes("land"))
+console.log(countriesCheck)
+
 // Explain the difference between find and findIndex.
 // Use find to find the first country containing only six letters in the countries array
+const countriesFind = countries.find(n => n.length === 6)
+console.log(countriesFind)
 // Use findIndex to find the position of the first country containing only six letters in the countries array
+const countriesFindIndex = countries.findIndex(n => n.length === 6)
+console.log(countriesFindIndex)
 // Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
 // Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+const countriesFindIndexPosition = countries.findIndex(n => n === 'Russia')
+console.log(countriesFindIndexPosition)
 
+
+// Exercises: Level 2
+// const products = [
+//     { product: 'banana', price: 3 },
+//     { product: 'mango', price: 6 },
+//     { product: 'potato', price: ' ' },
+//     { product: 'avocado', price: 8 },
+//     { product: 'coffee', price: 10 },
+//     { product: 'tea', price: '' },
+// ]
+// Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
+const productPriceTotal = products
+    .filter(item => item.price)
+    .map(item => item.price)
+    .reduce((acc, curr) => acc + curr, 0);
+console.log(productPriceTotal)
+// Find the sum of price of products using only reduce reduce(callback))
+const productTotalReduce = products.reduce((acc, crr) => {
+    if (crr.price) {
+        return acc + crr.price
+    }
+    else {
+        return acc
+    }
+}, 0)
+console.log(productTotalReduce)
+// Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+const countriesadded = [
+    {
+        id: 'AF',
+        name: 'Afghanistan',
+        continent: 'Asia',
+        currencyId: 'AFN',
+        phoneCode: '93',
+        flag: '🇦🇫'
+    },
+    {
+        id: 'AX',
+        name: 'Åland Islands',
+        continent: 'Europe',
+        currencyId: 'EUR',
+        phoneCode: '35818',
+        flag: '🇦🇽'
+    },
+    {
+        id: 'AL',
+        name: 'Albania',
+        continent: 'Europe',
+        currencyId: 'ALL',
+        phoneCode: '355',
+        flag: '🇦🇱'
+    },
+    {
+        id: 'DZ',
+        name: 'Algeria',
+        continent: 'Africa',
+        currencyId: 'DZD',
+        phoneCode: '213',
+        flag: '🇩🇿'
+    },
+    {
+        id: 'AS',
+        name: 'American Samoa',
+        continent: 'Australia',
+        currencyId: 'USD',
+        phoneCode: '1684',
+        flag: '🇦🇸'
+    },
+    {
+        id: 'AD',
+        name: 'Andorra',
+        continent: 'Europe',
+        currencyId: 'EUR',
+        phoneCode: '376',
+        flag: '🇦🇩'
+    },
+    {
+        id: 'AO',
+        name: 'Angola',
+        continent: 'Africa',
+        currencyId: 'AOA',
+        phoneCode: '244',
+        flag: '🇦🇴'
+    },
+    {
+        id: 'AI',
+        name: 'Anguilla',
+        continent: 'North America',
+        currencyId: 'XCD',
+        phoneCode: '1264',
+        flag: '🇦🇮'
+    },
+    {
+        id: 'AQ',
+        name: 'Antarctica',
+        continent: 'Antarctica',
+        currencyId: '-/-',
+        phoneCode: '672',
+        flag: '🇦🇶'
+    },
+    {
+        id: 'AG',
+        name: 'Antigua And Barbuda',
+        continent: 'North America',
+        currencyId: 'XCD',
+        phoneCode: '1268',
+        flag: '🇦🇬'
+    },
+    {
+        id: 'AR',
+        name: 'Argentina',
+        continent: 'South America',
+        currencyId: 'ARS',
+        phoneCode: '54',
+        flag: '🇦🇷'
+    },
+    {
+        id: 'AM',
+        name: 'Armenia',
+        continent: 'Asia',
+        currencyId: 'AMD',
+        phoneCode: '374',
+        flag: '🇦🇲'
+    },
+    {
+        id: 'AW',
+        name: 'Aruba',
+        continent: 'North America',
+        currencyId: 'ANG',
+        phoneCode: '297',
+        flag: '🇦🇼'
+    },
+    {
+        id: 'AC',
+        name: 'Ascension Island',
+        continent: 'Africa',
+        currencyId: 'SHP',
+        phoneCode: '247',
+        flag: '🇦🇨'
+    },
+    {
+        id: 'AU',
+        name: 'Australia',
+        continent: 'Australia',
+        currencyId: 'AUD',
+        phoneCode: '61',
+        flag: '🇦🇺'
+    },
+    {
+        id: 'AT',
+        name: 'Austria',
+        continent: 'Europe',
+        currencyId: 'EUR',
+        phoneCode: '43',
+        flag: '🇦🇹'
+    },
+    {
+        id: 'AZ',
+        name: 'Azerbaijan',
+        continent: 'Asia',
+        currencyId: 'AZN',
+        phoneCode: '994',
+        flag: '🇦🇿'
+    },
+    {
+        id: 'BS',
+        name: 'Bahamas',
+        continent: 'North America',
+        currencyId: 'BSD',
+        phoneCode: '1242',
+        flag: '🇧🇸'
+    },
+    {
+        id: 'BH',
+        name: 'Bahrain',
+        continent: 'Asia',
+        currencyId: 'BHD',
+        phoneCode: '973',
+        flag: '🇧🇭'
+    },
+    {
+        id: 'BD',
+        name: 'Bangladesh',
+        continent: 'Asia',
+        currencyId: 'BDT',
+        phoneCode: '880',
+        flag: '🇧🇩'
+    }
+]
+function categorizeCountries(arr, pattern) {
+
+
+    const tempLand = arr.filter(n => n.name.includes(pattern)).map(n => n.name)
+
+    console.log(tempLand)
+}
+categorizeCountries(countriesadded, 'Aus')
+// Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
+
+// Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+// Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+// Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
