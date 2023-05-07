@@ -251,14 +251,7 @@ const countriesadded = [
         phoneCode: '43',
         flag: '🇦🇹'
     },
-    {
-        id: 'AZ',
-        name: 'Azerbaijan',
-        continent: 'Asia',
-        currencyId: 'AZN',
-        phoneCode: '994',
-        flag: '🇦🇿'
-    },
+
     {
         id: 'BS',
         name: 'Bahamas',
@@ -297,3 +290,96 @@ categorizeCountries(countriesadded, 'Aus')
 // Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
 // Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
 // Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+
+
+
+
+
+function fizzBuzz(n) {
+    // Write your code here
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log(
+
+                "FizzBuzz")
+        }
+        else if (i % 3 === 0 && i % 5 !== 0) {
+            console.log("Fizz")
+        }
+        else if (i % 3 !== 0 && i % 5 === 0) {
+            console.log("Buzz")
+        }
+        else {
+            console.log(i)
+        }
+
+    }
+
+}
+fizzBuzz(15)
+
+
+const arr = [{
+    id: 1,
+    state: "Recived"
+},
+{
+    id: 2,
+    state: "Recived"
+},
+{
+    id: 3,
+    state: "Recived"
+}
+
+]
+
+function processOrderList(orderList, orderId, state) {
+    // Write your code here
+    for (let i = 0; i < orderList.length; i++) {
+        if (orderList[i].id === orderId && state === "Processing") {
+
+            orderList[i].state = state;
+            console.log(orderList)
+        }
+        else if (orderList[i].id === orderId && state === "Delivered") {
+            orderList.splice(i, 1)
+            console.log(orderList)
+        }
+
+
+
+
+    }
+}
+processOrderList(arr, 2, "Delivered")
+
+//Create a program to print the result as pass if the marks obtained is greater than or equal to 40 using ternary operator.
+
+var resultByMark = function (mark) {
+    return (mark >= 40) ? console.log("You Have Passed the test") : console.log("Sorry better luck next time");
+
+}
+resultByMark(15);
+resultByMark(40.1);
+//Write a program to find the HCF or GCD of two integers
+
+//example:-16, 8
+// commom factor 2,4,8.so 8 is the highest common factor
+
+function highestCommonFac(x, y) {
+    let HCF = ""
+    for (let i = 1; i <= x && i <= y; i++) {                      // we use one because if we use 0 then in muliplyication and division it will result 0 
+        if (x % i == 0 && y % i == 0) {
+
+            HCF = i
+        }
+
+    }
+    console.log(HCF)                                                       // i <=x && i <= y , because comman factor is will be inside the both valuse it will not be beyond that for example if we just keep one vale that is  i<=x and x value is 8it will diaply upto 8 alone but we need to find for both values so we use are using both the range   
+}
+
+highestCommonFac(16, 8);
+
+var newYear2022 = (function (y) { return y * y; }(2022));
+newYear2022(2)
