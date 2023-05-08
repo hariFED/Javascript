@@ -367,19 +367,72 @@ resultByMark(40.1);
 //example:-16, 8
 // commom factor 2,4,8.so 8 is the highest common factor
 
-function highestCommonFac(x, y) {
-    let HCF = ""
-    for (let i = 1; i <= x && i <= y; i++) {                      // we use one because if we use 0 then in muliplyication and division it will result 0 
-        if (x % i == 0 && y % i == 0) {
+// function highestCommonFac(x, y) {
+//     let HCF = ""
+//     for (let i = 1; i <= x && i <= y; i++) {                      // we use one because if we use 0 then in muliplyication and division it will result 0 
+//         if (x % i == 0 && y % i == 0) {
 
-            HCF = i
+//             HCF = i
+//         }
+
+//     }
+//     console.log(HCF)                                                       // i <=x && i <= y , because comman factor is will be inside the both valuse it will not be beyond that for example if we just keep one vale that is  i<=x and x value is 8it will diaply upto 8 alone but we need to find for both values so we use are using both the range   
+// }
+
+// highestCommonFac(16, 8);
+
+// var newYear2022 = (function (y) { return y * y; }(2022));
+// newYear2022(2)
+
+function plusMinus(arr) {
+    // Write your code here
+    let sumPositve = 0;
+    let sumNegative = 0;
+    let sumZero = 0
+    for (let i = 0; i < arr.length; i++) {
+
+        if (arr[i] > 0) {
+            sumPositve++
+        }
+        if (arr[i] < 0) {
+            sumNegative++
+        }
+        if (arr[i] === 0) {
+            sumZero++
         }
 
+
+
     }
-    console.log(HCF)                                                       // i <=x && i <= y , because comman factor is will be inside the both valuse it will not be beyond that for example if we just keep one vale that is  i<=x and x value is 8it will diaply upto 8 alone but we need to find for both values so we use are using both the range   
+    const ratioPostive = sumPositve / arr.length
+    const ratioNegative = sumNegative / arr.length
+    const ratioZero = sumZero / arr.length
+    console.log(ratioPostive.toFixed(6))
+    console.log(ratioNegative.toFixed(6))
+    console.log(ratioZero.toFixed(6))
 }
+plusMinus([-4, 3, -9, 0, 4, 1])
 
-highestCommonFac(16, 8);
 
-var newYear2022 = (function (y) { return y * y; }(2022));
-newYear2022(2)
+function getSecondLargest(nums) {
+    // Complete the function
+    nums = nums.sort(function (a, b) { return b - a });
+    console.log(nums)
+    let maxNum = 0
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 1; j < nums.length; j++) {
+            if (nums[i] === nums[j]) {
+                maxNum = (nums[j + 1])
+                break
+            }
+            else {
+                maxNum = (nums[i])
+                break
+            }
+        }
+    }
+    console.log(maxNum)
+
+
+}
+getSecondLargest([2, 2, 2, 1, 1, 1, 0])
